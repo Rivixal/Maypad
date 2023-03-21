@@ -73,6 +73,16 @@ namespace notepad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap a04d226d0d8d84220b26fe62798454d1 {
+            get {
+                object obj = ResourceManager.GetObject("a04d226d0d8d84220b26fe62798454d1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatar {
             get {
                 object obj = ResourceManager.GetObject("avatar", resourceCulture);
@@ -113,9 +123,29 @@ namespace notepad.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap channels4_profile1 {
+            get {
+                object obj = ResourceManager.GetObject("channels4_profile1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Creeper {
             get {
                 object obj = ResourceManager.GetObject("Creeper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_20220918_192253_731_removebg_preview_min {
+            get {
+                object obj = ResourceManager.GetObject("IMG_20220918_192253_731-removebg-preview-min", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

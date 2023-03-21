@@ -118,37 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Creeper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Creeper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="maypadlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maypadlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\avatar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="B641EA1A-4211-4DD0-8963-AC716D63CE2E1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\B641EA1A-4211-4DD0-8963-AC716D63CE2E1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="JaFVYWA256A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\JaFVYWA256A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="B641EA1A-4211-4DD0-8963-AC716D63CE2E" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B641EA1A-4211-4DD0-8963-AC716D63CE2E.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Untitled-1 copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled-1 copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="JaFVYWA256A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JaFVYWA256A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="channels4_profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\channels4_profile.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="B641EA1A-4211-4DD0-8963-AC716D63CE2E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\B641EA1A-4211-4DD0-8963-AC716D63CE2E.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OfsPtUvG_g4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OfsPtUvG_g4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="B641EA1A-4211-4DD0-8963-AC716D63CE2E1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B641EA1A-4211-4DD0-8963-AC716D63CE2E1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maypadlogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maypadlogo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="maypadlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maypadlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="0123" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0123.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IMG_20220918_192253_731-removebg-preview-min" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_20220918_192253_731-removebg-preview-min.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OfsPtUvG_g4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OfsPtUvG_g4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="channels4_profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\channels4_profile1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Creeper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Creeper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a04d226d0d8d84220b26fe62798454d1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a04d226d0d8d84220b26fe62798454d1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -51,9 +51,9 @@ namespace notepad
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(858, 264);
+            this.button1.Location = new System.Drawing.Point(12, 264);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
+            this.button1.Size = new System.Drawing.Size(921, 25);
             this.button1.TabIndex = 2;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = true;
@@ -94,6 +94,7 @@ namespace notepad
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form5
             // 
@@ -107,6 +108,7 @@ namespace notepad
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form5";
             this.Text = "ChangeLog";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

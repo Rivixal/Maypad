@@ -31,7 +31,7 @@ namespace notepad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://maydilsiel.7m.pl/maypad");
+            System.Diagnostics.Process.Start("https://github.com/Maydilsiel/Maypad");
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -22,6 +22,7 @@ namespace notepad
                 this.TopMost = true;
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.WindowState = FormWindowState.Maximized;
+            Cursor.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,6 +38,11 @@ namespace notepad
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form6_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Cursor.Show();
         }
     }
 }

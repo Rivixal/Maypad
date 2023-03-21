@@ -3,7 +3,8 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-
+using System.Text;
+using System.Text.Encodings.Web;
 
 namespace notepad
 {
@@ -35,11 +36,26 @@ namespace notepad
 
         public void CreateNewDocument(object sender, EventArgs e)
         {
-            SaveUnsavedFile();
-            richTextBox1.Text = "";
-            filename = "";
-            isFileChanged = false;
-            UpdateTextWithTitle();
+            if (isFileChanged)
+            {
+                DialogResult result = MessageBox.Show("Внимание! Внесённые вами данные не сохранены, хотите сейчас сохранить?", "Сохранение файла", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.Yes)
+                {
+                    SaveFile(filename);
+                }
+                if (result == DialogResult.No)
+                {
+
+                }
+                if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
+                richTextBox1.Text = "";
+                filename = "";
+                isFileChanged = false;
+                UpdateTextWithTitle();
+            }
         }
 
         public void OpenFile(object sender, EventArgs e)
@@ -57,7 +73,7 @@ namespace notepad
                 }
                 catch
                 {
-                    MessageBox.Show("Вы закрыли открытье файлов");
+                    return;
                 }
             }
             UpdateTextWithTitle();
@@ -82,7 +98,7 @@ namespace notepad
             }
             catch
             {
-                MessageBox.Show("Вы закрыли сохранение");
+                return;
             }
         }
 
@@ -119,19 +135,7 @@ namespace notepad
 
         public void SaveUnsavedFile()
         {
-            if (isFileChanged)
 
-            {
-                DialogResult result = MessageBox.Show("Сохраните срочно файл! Так-как если вы не сохранитесь сейчас, то важные данные пропадут с блокнота. Нажмите ''Да'' чтобы сохраниться.", "Важно!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.Yes)
-                {
-                    SaveFile(filename);
-                }
-                if (result == DialogResult.Cancel)
-                {
-
-                }
-            }
         }
 
         private void On(object sender, FormClosedEventArgs e)
@@ -156,8 +160,8 @@ namespace notepad
             contextMenuStrip1.Font = new Font("Segoe UI", 9, FontStyle.Regular);
             richTextBox1.ForeColor = Color.White;
             richTextBox1.BackColor = Color.Black;
-            menuStrip1.BackColor = Color.Black;
-            menuStrip1.ForeColor = Color.White;
+            menuStrip1.ForeColor = Color.Black;
+            menuStrip1.BackColor = Color.White;
             contextMenuStrip1.BackColor = Color.Black;
             contextMenuStrip1.ForeColor = Color.White;
             statusStrip1.BackColor = Color.Black;
@@ -170,6 +174,12 @@ namespace notepad
             toolStripStatusLabel10.ForeColor = Color.White;
             toolStripStatusLabel11.ForeColor = Color.White;
             toolStripStatusLabel12.ForeColor = Color.White;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = richTextBox1.ForeColor;
+            richTextBox1.SelectionBackColor = richTextBox1.BackColor;
+            menuStrip1.ForeColor = Color.Black;
+            menuStrip1.BackColor = Color.White;
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
         }
 
         private void светлаяToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,8 +198,6 @@ namespace notepad
             contextMenuStrip1.Font = new Font("Segoe UI", 9, FontStyle.Regular);
             richTextBox1.ForeColor = Color.Black;
             richTextBox1.BackColor = Color.White;
-            menuStrip1.BackColor = Color.White;
-            menuStrip1.ForeColor = Color.Black;
             contextMenuStrip1.BackColor = Color.White;
             contextMenuStrip1.ForeColor = Color.Black;
             statusStrip1.BackColor = Color.White;
@@ -204,6 +212,12 @@ namespace notepad
             toolStripStatusLabel12.ForeColor = Color.Black;
             toolStripStatusLabel2.BackColor = Color.Transparent;
             toolStripStatusLabel3.BackColor = Color.Transparent;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = richTextBox1.ForeColor;
+            richTextBox1.SelectionBackColor = richTextBox1.BackColor;
+            menuStrip1.ForeColor = Color.Black;
+            menuStrip1.BackColor = Color.White;
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
         }
 
         private void темнаяHackToolStripMenuItem_Click(object sender, EventArgs e)
@@ -222,8 +236,6 @@ namespace notepad
             contextMenuStrip1.Font = new Font("Consolas", 9, FontStyle.Regular);
             richTextBox1.ForeColor = Color.LimeGreen;
             richTextBox1.BackColor = Color.Black;
-            menuStrip1.BackColor = Color.Black;
-            menuStrip1.ForeColor = Color.LightSkyBlue;
             contextMenuStrip1.BackColor = Color.Black;
             contextMenuStrip1.ForeColor = Color.LimeGreen;
             statusStrip1.BackColor = Color.Black;
@@ -236,6 +248,12 @@ namespace notepad
             toolStripStatusLabel10.ForeColor = Color.LimeGreen;
             toolStripStatusLabel11.ForeColor = Color.LimeGreen;
             toolStripStatusLabel12.ForeColor = Color.LimeGreen;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = richTextBox1.ForeColor;
+            richTextBox1.SelectionBackColor = richTextBox1.BackColor;
+            menuStrip1.ForeColor = Color.Black;
+            menuStrip1.BackColor = Color.White;
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
         }
 
         private void темаMSMaydilsielStyleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -254,8 +272,6 @@ namespace notepad
             contextMenuStrip1.Font = new Font("Segoe UI", 9, FontStyle.Regular);
             richTextBox1.ForeColor = Color.White;
             richTextBox1.BackColor = Color.DarkSlateGray;
-            menuStrip1.BackColor = Color.DarkViolet;
-            menuStrip1.ForeColor = Color.White;
             contextMenuStrip1.BackColor = Color.DarkViolet;
             contextMenuStrip1.ForeColor = Color.White;
             statusStrip1.BackColor = Color.DarkViolet;
@@ -268,6 +284,12 @@ namespace notepad
             toolStripStatusLabel10.ForeColor = Color.White;
             toolStripStatusLabel11.ForeColor = Color.White;
             toolStripStatusLabel12.ForeColor = Color.White;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = richTextBox1.ForeColor;
+            richTextBox1.SelectionBackColor = richTextBox1.BackColor;
+            menuStrip1.ForeColor = Color.Black;
+            menuStrip1.BackColor = Color.White;
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
         }
 
         private void темаErtorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -286,8 +308,6 @@ namespace notepad
             contextMenuStrip1.Font = new Font("Segoe UI", 9, FontStyle.Regular);
             richTextBox1.ForeColor = Color.Black;
             richTextBox1.BackColor = Color.DarkOrange;
-            menuStrip1.BackColor = Color.SlateGray;
-            menuStrip1.ForeColor = Color.Yellow;
             contextMenuStrip1.BackColor = Color.SlateGray;
             contextMenuStrip1.ForeColor = Color.Yellow;
             statusStrip1.BackColor = Color.SlateGray;
@@ -300,6 +320,12 @@ namespace notepad
             toolStripStatusLabel10.ForeColor = Color.White;
             toolStripStatusLabel11.ForeColor = Color.White;
             toolStripStatusLabel12.ForeColor = Color.White;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = richTextBox1.ForeColor;
+            richTextBox1.SelectionBackColor = richTextBox1.BackColor;
+            menuStrip1.ForeColor = Color.Black;
+            menuStrip1.BackColor = Color.White;
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
         }
 
         private void сераяToolStripMenuItem_Click(object sender, EventArgs e)
@@ -318,8 +344,6 @@ namespace notepad
             contextMenuStrip1.Font = new Font("Segoe UI", 9, FontStyle.Regular);
             richTextBox1.ForeColor = Color.White;
             richTextBox1.BackColor = Color.DimGray;
-            menuStrip1.BackColor = Color.DimGray;
-            menuStrip1.ForeColor = Color.White;
             contextMenuStrip1.BackColor = Color.DimGray;
             contextMenuStrip1.ForeColor = Color.White;
             statusStrip1.BackColor = Color.DimGray;
@@ -332,6 +356,12 @@ namespace notepad
             toolStripStatusLabel10.ForeColor = Color.White;
             toolStripStatusLabel11.ForeColor = Color.White;
             toolStripStatusLabel12.ForeColor = Color.White;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = richTextBox1.ForeColor;
+            richTextBox1.SelectionBackColor = richTextBox1.BackColor;
+            menuStrip1.ForeColor = Color.Black;
+            menuStrip1.BackColor = Color.White;
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
         }
 
         private void шрифтToolStripMenuItem_Click(object sender, EventArgs e)
@@ -423,7 +453,6 @@ namespace notepad
             toolStripStatusLabel12.Text = "**.**.**** **:**";
             toolStripStatusLabel8.Text = InputLanguage.CurrentInputLanguage.Culture.Name;
             toolStripStatusLabel8.Text = InputLanguage.CurrentInputLanguage.LayoutName;
-            panel1.Visible = false;
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemEventArgs e)
@@ -599,6 +628,10 @@ namespace notepad
             toolStripStatusLabel10.ForeColor = Color.White;
             toolStripStatusLabel11.ForeColor = Color.White;
             toolStripStatusLabel12.ForeColor = Color.White;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = richTextBox1.ForeColor;
+            richTextBox1.SelectionBackColor = richTextBox1.BackColor;
+            menuStrip1.RenderMode = ToolStripRenderMode.System;
         }
 
         private void темаNanoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -614,13 +647,14 @@ namespace notepad
 
         private void найтиИЗаменитьToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            richTextBox1.Top = 0;
+            Form7 SearchForm = new Form7();
+            this.AddOwnedForm(SearchForm);
+            SearchForm.Show();
         }
 
         private void полноэкранныйРежимToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.TopMost = true;
+            this.WindowState = FormWindowState.Minimized;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
         }
@@ -723,32 +757,22 @@ namespace notepad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int start = 0;
-            int end = richTextBox1.Text.LastIndexOf(textBox1.Text);
-            richTextBox1.SelectAll();
+            //int start = 0;
+            //int end = richTextBox1.Text.LastIndexOf(richTextBox1.Text);
+            //richTextBox1.SelectAll();
 
-            while (start < end)
-            {
-                start = richTextBox1.Find(textBox1.Text, start, richTextBox1.TextLength, RichTextBoxFinds.None);
-                richTextBox1.SelectionBackColor = Color.Cyan;
-                richTextBox1.Select(start, textBox1.TextLength);
-                start++;
-            }
+           // while (start < end)
+           // {
+               // start = richTextBox1.Find(richTextBox1.Text, start, richTextBox1.TextLength, RichTextBoxFinds.None);
+               // richTextBox1.SelectionBackColor = Color.Cyan;
+               // richTextBox1.Select(start, richTextBox1.TextLength);
+                //start++;
+           // }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int start = 0;
-            int end = richTextBox1.Text.LastIndexOf(textBox1.Text);
-            richTextBox1.SelectAll();
-
-            while (start < end)
-            {
-                start = richTextBox1.Find(textBox1.Text, start, richTextBox1.TextLength, RichTextBoxFinds.None);
-                richTextBox1.SelectionColor = richTextBox1.ForeColor;
-                richTextBox1.Select(start, textBox1.TextLength);
-                start++;
-            }
+            richTextBox1.SelectionBackColor = Color.Transparent;
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -758,7 +782,150 @@ namespace notepad
 
         private void button4_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
+
+        }
+
+        private void показатьToolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            richTextBox1.ScrollBars = RichTextBoxScrollBars.ForcedBoth;
+        }
+
+        private void скрытьToolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            richTextBox1.ScrollBars = RichTextBoxScrollBars.Both;
+        }
+
+        private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripTextBox1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void uTF8ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = File.ReadAllText(filename, Encoding.BigEndianUnicode);
+        }
+
+        private void uTF16ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = File.ReadAllText(filename, Encoding.BigEndianUnicode);
+        }
+
+        private void aSCIIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = File.ReadAllText(filename, Encoding.ASCII);
+        }
+
+        private void uTF16LEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = File.ReadAllText(filename, Encoding.Unicode);
+        }
+
+        private void настроитьФонToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                Color selectedColor = colorDialog.Color;
+                richTextBox1.BackColor = selectedColor;
+                richTextBox1.SelectionBackColor = richTextBox1.ForeColor;
+                richTextBox1.SelectionBackColor = richTextBox1.BackColor;
+            }
+        }
+
+        private void настроитьЦветТекстаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                Color selectedColor = colorDialog.Color;
+                richTextBox1.Select();
+                richTextBox1.ForeColor = selectedColor;
+            }
+        }
+
+        private void вызватьПолныйПанельИнструментовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("При сохранения текстового документа с форматированием текста, изменения не будут сохраненны. В ближайших версиях мы скоро исправим этот недочет.", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            Form8 sc = new Form8();
+            this.AddOwnedForm(sc);
+            sc.Show();
+        }
+
+        private void почеркнутыйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Select();
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Underline);
+        }
+
+        private void обычныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Select();
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Regular);
+        }
+
+        private void жирныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Select();
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Bold);
+        }
+
+        private void курсивToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Select();
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Italic);
+        }
+
+        private void зачеркнутыйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Select();
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font, FontStyle.Strikeout);
+        }
+
+        private void цветТекстаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                Color selectedColor = colorDialog.Color;
+                richTextBox1.Select();
+                richTextBox1.SelectionColor = selectedColor;
+            }
+        }
+
+        private void выделитьТекстЦветомToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                Color selectedColor = colorDialog.Color;
+                richTextBox1.Select();
+                richTextBox1.SelectionBackColor = selectedColor;
+            }
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void предупреждениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("При сохранения текстового документа с форматированием текста, изменения не будут сохраненны. В ближайших версиях мы скоро исправим этот недочет.", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
